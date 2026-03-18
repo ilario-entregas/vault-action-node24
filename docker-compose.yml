@@ -11,14 +11,6 @@ services:
     ports:
       - 8200:8200
     privileged: true
-  vault-enterprise:
-    image: hashicorp/vault-enterprise:latest
-    environment:
-      VAULT_DEV_ROOT_TOKEN_ID: testtoken
-      VAULT_LICENSE: ${VAULT_LICENSE_CI}
-    ports:
-      - 8200:8200
-    privileged: true
   vault-tls:
     image: hashicorp/vault:latest
     hostname: vault-tls
