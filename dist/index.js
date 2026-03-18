@@ -18529,6 +18529,11 @@ function wrappy (fn, cb) {
 /***/ 3348:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright IBM Corp. 2019, 2025
+ * SPDX-License-Identifier: MIT
+ */
+
 // @ts-check
 const core = __nccwpck_require__(2186);
 const command = __nccwpck_require__(7351);
@@ -18810,6 +18815,11 @@ module.exports = {
 /***/ 4915:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright IBM Corp. 2019, 2025
+ * SPDX-License-Identifier: MIT
+ */
+
 // @ts-check
 const core = __nccwpck_require__(2186);
 const rsasign = __nccwpck_require__(7175);
@@ -19005,6 +19015,11 @@ module.exports = {
 /***/ 4438:
 /***/ ((module) => {
 
+/**
+ * Copyright IBM Corp. 2019, 2025
+ * SPDX-License-Identifier: MIT
+ */
+
 const WILDCARD_UPPERCASE = '*';
 const WILDCARD = '**';
 
@@ -19018,6 +19033,11 @@ module.exports = {
 
 /***/ 4351:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+/**
+ * Copyright IBM Corp. 2019, 2025
+ * SPDX-License-Identifier: MIT
+ */
 
 const auth = __nccwpck_require__(4915);
 const secrets = __nccwpck_require__(8452);
@@ -19033,6 +19053,11 @@ module.exports = {
 
 /***/ 1973:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+/**
+ * Copyright IBM Corp. 2019, 2025
+ * SPDX-License-Identifier: MIT
+ */
 
 const { normalizeOutputKey } = __nccwpck_require__(1608);
 const core = __nccwpck_require__(2186);
@@ -19115,6 +19140,11 @@ module.exports = {
 
 /***/ 8452:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+/**
+ * Copyright IBM Corp. 2019, 2025
+ * SPDX-License-Identifier: MIT
+ */
 
 const jsonata = __nccwpck_require__(4245);
 const { WILDCARD, WILDCARD_UPPERCASE} = __nccwpck_require__(4438);
@@ -19301,6 +19331,11 @@ module.exports = {
 
 /***/ 1608:
 /***/ ((module) => {
+
+/**
+ * Copyright IBM Corp. 2019, 2025
+ * SPDX-License-Identifier: MIT
+ */
 
 /**
  * Replaces any dot chars to __ and removes non-ascii charts
@@ -19502,6 +19537,11 @@ module.exports = require("zlib");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+/**
+ * Copyright IBM Corp. 2019, 2025
+ * SPDX-License-Identifier: MIT
+ */
+
 const core = __nccwpck_require__(2186);
 const { exportSecrets } = __nccwpck_require__(3348);
 
