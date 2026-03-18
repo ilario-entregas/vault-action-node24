@@ -74,6 +74,21 @@ jobs:
         env:
           VAULT_LICENSE_CI: ${{ secrets.VAULT_LICENSE_CI }}
 
+      - name: Wait for Vault to be ready
+        run: |
+          echo "Waiting for Vault to start..."
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:8200/v1/sys/health > /dev/null 2>&1; then
+              echo "Vault is ready!"
+              exit 0
+            fi
+            echo "Attempt $i/30 - waiting..."
+            sleep 2
+          done
+          echo "Vault did not start in time"
+          docker compose logs vault-enterprise
+          exit 1
+
       - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
           node-version: "24"
