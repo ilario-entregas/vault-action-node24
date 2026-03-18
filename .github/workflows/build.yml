@@ -223,7 +223,7 @@ jobs:
         run: npm run build
 
       - name: Setup Vault
-        run: node ./integrationTests/e2e-tls/setup.js
+        run: node --use-system-ca ./integrationTests/e2e-tls/setup.js
         env:
           VAULT_HOST: localhost
           VAULT_PORT: 8200
