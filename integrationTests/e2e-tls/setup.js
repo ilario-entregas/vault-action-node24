@@ -10,7 +10,6 @@ const vaultUrl = `${process.env.VAULT_HOST}:${process.env.VAULT_PORT}`;
 const caCertificateRaw = `${process.env.VAULTCA}`;
 const clientCertificateRaw = `${process.env.VAULT_CLIENT_CERT}`;
 const clientKeyRaw = `${process.env.VAULT_CLIENT_KEY}`;
-const tls = require('tls');
 
 (async () => {
     try {
@@ -29,30 +28,7 @@ const tls = require('tls');
         if (clientKey == null) {
             throw Error("VAULT_CLIENT_KEY env not set.")
         }
-        
-        await new Promise((resolve) => {
-            const socket = tls.connect({
-                host: process.env.VAULT_HOST,
-                port: parseInt(process.env.VAULT_PORT),
-                ca: caCertificate,
-                cert: clientCertificate,
-                key: clientKey,
-            }, () => {
-                const cert = socket.getPeerCertificate();
-                console.log('Server cert Subject:', JSON.stringify(cert.subject));
-                console.log('Server cert SAN:', cert.subjectaltname);
-                console.log('Server cert Issuer:', JSON.stringify(cert.issuer));
-                console.log('Server cert Valid from:', cert.valid_from);
-                console.log('Server cert Valid to:', cert.valid_to);
-                socket.destroy();
-                resolve();
-            });
-            socket.on('error', (e) => {
-                console.log('TLS debug error:', e.message);
-                resolve();
-            });
-        });
-        
+
         // Init
         const {body} = await got(`https://${vaultUrl}/v1/sys/init`, {
             method: 'POST',
