@@ -14,7 +14,6 @@ const clientKeyRaw = `${process.env.VAULT_CLIENT_KEY}`;
 (async () => {
     try {
         var caCertificate = Buffer.from(caCertificateRaw, 'base64').toString();
-        console.log('CA Certificate preview:', caCertificate.substring(0, 50))
         if (caCertificate == null) {
             throw Error("VAULTCA env not set.")
         }
